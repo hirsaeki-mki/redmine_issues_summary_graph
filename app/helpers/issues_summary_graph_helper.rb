@@ -123,7 +123,7 @@ module IssuesSummaryGraphHelper
       gc.stroke('transparent').stroke_width(1).fill('black')
       text = (step * i).to_i.to_s
       metrics = gc.get_type_metrics(text)
-      text_height = (metrics.bounds.y2 - metrics.bounds.y1).round
+      text_height = metrics.height.round
       gc.text(0, graph_height - margin * i + text_height, text)
     end
     gc.stroke('transparent').fill('lightgray')
